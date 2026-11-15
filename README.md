@@ -54,4 +54,3 @@ Open `index.html` through the Perchance host to use it. To run the page outside 
 
 - Conversations and settings are stored in your browser, not on a server. Clearing site data erases them, so use **Thread → Backup** if you want a copy.
 - The personality prompt tells Ruckus not to invent details about Jerry. Anything outside the profile in `src/config.js` gets an "I don't know" answer.
-- `index.monolith.html` is not part of this repository's tracked files.
