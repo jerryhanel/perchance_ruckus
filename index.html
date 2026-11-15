@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruckus - Animated Chat Bot</title>
+
+  <!-- Dexie for IndexedDB -->
+  <script src="https://cdn.jsdelivr.net/npm/dexie@4/dist/dexie.min.js"></script>
+
+  <!-- Marked for Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <!-- Menu Bar -->
+  <div class="menuBar">
+    <div class="menu">[fullscreenButtonPlugin("⇱", "⇲", "background:transparent; border:none; color:inherit; font:inherit; width:min-content; height:100%;")]</div>
+    <div class="menu">
+      File
+      <div class="dropdown">
+        <button id="settingsBtn">Settings</button>
+      </div>
+    </div>
+    <div class="menu">
+      Thread
+      <div class="dropdown">
+        <button id="switchThreadBtn">Switch</button>
+        <button id="newThreadBtn">New</button>
+        <button id="deleteThreadBtn">Delete</button>
+        <button id="backupThreadBtn">Backup</button>
+        <button id="restoreThreadBtn">Restore</button>
+      </div>
+    </div>
+    <div class="menu">
+      Test Modes
+      <div class="dropdown">
+        <button id="testBoredBtn">Bored Mode</button>
+        <button id="testSleepyBtn">Sleepy Mode</button>
+        <button id="testSleepBtn">Sleep Mode</button>
+        <button id="testNormalBtn">Normal</button>
+      </div>
+    </div>
+    <h1 id="personalityDisplay" style="margin-left: auto; font-size: 16px; font-weight: 500;">Ruckus</h1>
+  </div>
+
+
+  <!-- Main Container -->
+  <div class="mainContainer">
+    <!-- Video Toggle Button (Mobile) -->
+    <button class="videoToggleBtn" id="videoToggleBtn" style="display: none;">⬆️</button>
+
+    <!-- Left: Face -->
+    <div class="faceContainer" id="faceContainer">
+      <div class="versionLabel">Version 6.0</div>
+      <div class="faceVideo" id="faceVideo">
+      </div>
+    </div>
+
+    <!-- Right: Chat -->
+    <div class="chatContainer">
+      <div class="threadSelector" style="display: none;">
+        <select id="threadSelect">
+          <option value="">+ New Thread</option>
+        </select>
+      </div>
+
+      <div class="chatHistory empty" id="chatHistory"></div>
+
+      <div id="resubmitContainer" style="padding: 0.5rem 1rem; border-top: 1px solid var(--border-color);"></div>
+
+      <div class="inputArea">
+        <textarea id="messageInput" placeholder="Type your message..." rows="3"></textarea>
+        <button id="stopSpeakingBtn" title="Stop speaking">🔇 Stop</button>
+        <button id="stopProcessingBtn" title="Stop the AI's current response">⏹ Stop</button>
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
